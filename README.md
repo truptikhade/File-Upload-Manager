@@ -4,13 +4,13 @@ A Google Drive style upload widget: a small dropzone plus a floating panel that 
 
 ## Files
 
-- `src/hooks/useUploadQueue.js` — all the logic, framework light and unit testable on its own: concurrency cap, chunked upload simulation, retry with resume, cancellation. The "network" call is injected (`transportChunk`) so tests don't depend on real timers or randomness.
-- `src/components/FileUploadManager.jsx` + `.module.css` — the UI: dropzone, floating panel, perfile row with progress bar and status icon.
-- `src/hooks/useUploadQueue.test.js` — Jest + React Testing Library tests covering async transitions, concurrency limits under load, resume from last chunk retry, and cancellation.
+- `src/hooks/useUploadQueue.js` : all the logic, framework light and unit testable on its own: concurrency cap, chunked upload simulation, retry with resume, cancellation. The "network" call is injected (`transportChunk`) so tests don't depend on real timers or randomness.
+- `src/components/FileUploadManager.jsx` : `.module.css` : the UI: dropzone, floating panel, perfile row with progress bar and status icon.
+- `src/hooks/useUploadQueue.test.js` : Jest + React Testing Library tests covering async transitions, concurrency limits under load, resume from last chunk retry, and cancellation.
 
 ## Behavior
 
-- **States**: `pending → uploading → completed`, or `failed` (with the option to retry), or `canceled`.
+- **States**: `pending -> uploading -> completed`, or `failed` (with the option to retry), or `canceled`.
 - **Concurrency**: at most 3 files upload at once; the rest wait as `pending` and are promoted automatically as slots free up.
 - **Chunking**: each file is split into simulated chunks (`chunkSize`, default 256 KB) and "sent" one at a time with a randomized delay and failure chance, so progress moves chunk by chunk rather than jumping from 0 to 100.
 - **Resume**: retrying a failed file continues from `uploadedChunks` rather than resending everything from the start.
