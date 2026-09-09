@@ -1,0 +1,180 @@
+.wrap {
+  font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #202124;
+}
+
+.dropzone {
+  border: 1.5px dashed #dadce0;
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  color: #5f6368;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+  max-width: 420px;
+}
+
+.dropzone p {
+  margin: 0;
+  font-size: 13.5px;
+}
+
+.dropzone[data-active='true'] {
+  border-color: #1a73e8;
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 380px;
+  max-width: calc(100vw - 40px);
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  z-index: 40;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f3f4;
+  padding: 10px 8px 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #202124;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  padding: 8px 16px;
+  align-items: flex-start;
+}
+
+.row:hover {
+  background: #f8f9fa;
+}
+
+.badge {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #e8eaed;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 9px ui-monospace, 'IBM Plex Mono', monospace;
+  margin-top: 2px;
+}
+
+.rowBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #202124;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.subtitle {
+  font: 400 11.5px ui-monospace, 'IBM Plex Mono', monospace;
+  color: #5f6368;
+  margin-top: 2px;
+}
+
+.subtitle[data-tone='err'] {
+  color: #d93025;
+}
+
+.subtitle[data-tone='ok'] {
+  color: #188038;
+}
+
+.track {
+  height: 3px;
+  background: #e8eaed;
+  border-radius: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #1a73e8;
+  transition: width 140ms ease;
+}
+
+.linkBtn {
+  border: none;
+  background: none;
+  color: #1a73e8;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.iconBtn {
+  border: none;
+  background: none;
+  color: #5f6368;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 50%;
+}
+
+.iconBtn:hover {
+  background: #e8eaed;
+}
+
+.iconOk {
+  color: #188038;
+  flex: none;
+}
+
+.iconErr {
+  color: #d93025;
+  flex: none;
+}
